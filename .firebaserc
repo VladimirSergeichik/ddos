@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "ddos-e15e0"
+  },
+  "targets": {
+    "ddos-e15e0": {
+      "hosting": {
+        "development": [
+          "ddos-e15e0"
+        ],
+        "production": [
+          "ddos-russia"
+        ]
+      }
+    }
   }
 }

@@ -8,7 +8,11 @@
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:development": "firebase deploy --only hosting:development",
+    "deploy:production": "firebase deploy --only hosting:production",
+    "build-and-deploy:development": "npm run build && npm run deploy:development",
+    "build-and-deploy:production": "npm run build && npm run deploy:production"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
