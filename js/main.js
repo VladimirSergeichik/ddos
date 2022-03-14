@@ -68,7 +68,7 @@ setTimeout(() => {
     }
   }
 
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 777; i++) {
     run();
   }
 
