@@ -13,7 +13,7 @@ function printStats() {
   statsEl.innerHTML = 'total: '+id+'<br/><br/><table width="100%"><thead><tr><th align="left">URL</th><th align="left">Number of Requests</th><th align="left">Number of Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, {
     number_of_requests,
     number_of_errored_responses
-  }]) => '<tr><td>' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
+  }]) => '<tr><td style="max-width: 60vw; overflow: hidden">' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
 
   setTimeout(printStats, 1000)
 }
