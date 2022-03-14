@@ -58,7 +58,7 @@ setTimeout(() => {
 
   function run() {
     if (id === 500000) {
-      setTimeout(() => location.href = '?'+Date.now(), 5000)
+      setTimeout(() => location.href = '?'+Date.now(), 60000)
     } else {
       id++;
 
