@@ -58,7 +58,7 @@ setTimeout(() => {
 
   function run() {
     if (id === 999999) {
-      setTimeout(() => location.reload(), 60000)
+      setTimeout(() => location.reload(), 5 * 60 * 1000)
     } else {
       id++;
 
